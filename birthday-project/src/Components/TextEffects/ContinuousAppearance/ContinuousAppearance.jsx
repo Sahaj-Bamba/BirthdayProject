@@ -16,14 +16,15 @@ export default class ContinuousAppearance extends Component {
 				<div className="Container">
 					{text.split("").map((content, index) => (
 						<span
+							key={index}
 							className="Content"
 							style={{
-								animationDelay:
-									initialDelay + index * speed + "s",
 								animation:
 									"continuousAppearance " +
 									timing +
 									"s ease forwards",
+								animationDelay:
+									initialDelay + index * speed + "s",
 							}}
 						>
 							{content}

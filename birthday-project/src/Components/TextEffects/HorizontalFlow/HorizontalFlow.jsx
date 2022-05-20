@@ -16,14 +16,15 @@ export default class HorizontalFlow extends Component {
 				<div className="Container">
 					{text.split("").map((content, index) => (
 						<span
+							key={index}
 							className="Content"
 							style={{
-								animationDelay:
-									initialDelay + index * speed + "s",
 								animation:
 									"horizontalFlow " +
 									timing +
 									"s ease forwards",
+								animationDelay:
+									initialDelay + index * speed + "s",
 							}}
 						>
 							{content}
