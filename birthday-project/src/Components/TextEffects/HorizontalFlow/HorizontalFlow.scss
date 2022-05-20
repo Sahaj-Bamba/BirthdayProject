@@ -1,0 +1,22 @@
+@keyframes horizontalFlow {
+	0% {
+		transform: translateX(-100vw);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+.HorizontalFlow > .Container > .Content {
+	display: inline-block;
+	min-width: 4px;
+	opacity: 1;
+	transform: translateX(-100vw);
+	animation: horizontalFlow 0.8s ease forwards;
+}
+
+// @for $i from 1 through 1000 {
+// 	.HorizontalFlow > .Container > .Content:nth-child(#{$i}n) {
+// 		animation-delay: #{$i * 0.3}s;
+// 	}
+// }

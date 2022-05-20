@@ -1,0 +1,19 @@
+.Base {
+	width: 100vw;
+	height: 100vh;
+	border: 2px solid black;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.Base::-webkit-scrollbar,
+body::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+.Base,
+body {
+	-ms-overflow-style: none;
+}
