@@ -13,16 +13,10 @@ export default class Quiz extends Component {
 			emoji: "😁",
 		},
 		{
-			emoji: "🤔",
+			emoji: "🤤",
 		},
 		{
-			emoji: "😕",
-		},
-		{
-			emoji: "😜",
-		},
-		{
-			emoji: "😁",
+			emoji: "🤯",
 		},
 	];
 
@@ -35,9 +29,15 @@ export default class Quiz extends Component {
 			"Now if we just had a compass.",
 			"Go North if things ever go South.",
 		],
+		[
+			"Yummmmyyyyyy.",
+			"Yum ! Yum ! Yum !",
+			"I am radio-active",
+			"It will do",
+		],
 	];
 
-	nextQuestionDelay = [7];
+	nextQuestionDelay = [7, 7];
 
 	constructor(props) {
 		super(props);
@@ -54,6 +54,10 @@ export default class Quiz extends Component {
 		}
 		this.answered[questionNumber] = true;
 		setTimeout(() => {
+			if (this.state.questionNumber === 1) {
+				this.props.nextStage();
+				return;
+			}
 			this.setState({
 				questionNumber: this.state.questionNumber + 1,
 				emojiIndex: this.state.emojiIndex + 1,
@@ -120,6 +124,58 @@ export default class Quiz extends Component {
 						</div>
 					</div>
 				);
+			case 1:
+				return (
+					<div className="QuizPannel">
+						<div className="Question">
+							Q2) What would you eat?
+							<br />
+						</div>
+						<div className="Options">
+							<br />
+							<div
+								className="Option"
+								onClick={() => {
+									this.answering(1, 0);
+								}}
+								style={{ background: "#6060f3" }}
+							>
+								1) Pizza
+							</div>
+							<br />
+							<div
+								className="Option"
+								onClick={() => {
+									this.answering(1, 1);
+								}}
+								style={{ background: "#f36060" }}
+							>
+								2) Burger
+							</div>
+							<br />
+							<div
+								className="Option"
+								onClick={() => {
+									this.answering(1, 2);
+								}}
+								style={{ background: "#9ff360" }}
+							>
+								3) Uranium
+							</div>
+							<br />
+							<div
+								className="Option"
+								onClick={() => {
+									this.answering(1, 3);
+								}}
+								style={{ background: "#60f3b6" }}
+							>
+								4) Fries
+							</div>
+							<br />
+						</div>
+					</div>
+				);
 			default:
 				return <></>;
 		}
@@ -157,6 +213,32 @@ export default class Quiz extends Component {
 						<HorizontalFlow
 							text={
 								this.answerSuccessText[0][
+									this.state.answerNumber
+								]
+							}
+							initialDelay={0.2}
+							speed={0.2}
+							timing={0.5}
+						/>
+					</div>
+				);
+			case 2:
+				return (
+					<div className="Stage0">
+						<ContinuousAppearance
+							text="All this is making me hungry"
+							initialDelay={0.2}
+							speed={0.2}
+							timing={0.5}
+						/>
+					</div>
+				);
+			case 3:
+				return (
+					<div className="Stage0">
+						<HorizontalFlow
+							text={
+								this.answerSuccessText[1][
 									this.state.answerNumber
 								]
 							}

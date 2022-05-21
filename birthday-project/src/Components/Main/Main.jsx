@@ -6,6 +6,8 @@ import Button from "@mui/material/Button";
 
 import "./Main.scss";
 import Quiz from "../Quiz/Quiz";
+import Final from "../FinalStage/Final";
+import DetailsForm from "../DetailsForm/DetailsForm";
 
 export default class Main extends Component {
 	noMessage = [
@@ -66,7 +68,7 @@ export default class Main extends Component {
 		super(props);
 		this.state = {
 			noPressed: false,
-			stage: 0,
+			stage: 3,
 			noStage: 0,
 			activeElement: 0,
 			noDisabled: false,
@@ -78,6 +80,13 @@ export default class Main extends Component {
 	pressedButtonClick = () => {
 		const { stage } = this.state;
 		this.setState({ stage: stage + 1, noPressed: false });
+	};
+
+	setStage = (stage) => {
+		this.setState({
+			stage: stage,
+			noPressed: false,
+		});
 	};
 
 	pressedSwitch = () => {
@@ -155,7 +164,17 @@ export default class Main extends Component {
 					</div>
 				);
 			case 2:
-				return <Quiz />;
+				return <Quiz nextStage={this.pressedButtonClick} />;
+			case 3:
+				return (
+					<Final
+						nextStage={() =>
+							this.state.stage !== 4 && this.setStage(4)
+						}
+					/>
+				);
+			case 4:
+				return <DetailsForm nextStage={this.pressedButtonClick} />;
 			default:
 				return <></>;
 		}
