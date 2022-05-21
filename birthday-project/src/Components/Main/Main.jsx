@@ -98,50 +98,50 @@ export default class Main extends Component {
 						<ContinuousAppearance
 							text="Hello World !!!☺️☺️"
 							initialDelay={0.2}
-							speed={0.2}
-							timing={0.5}
+							speed={0.1}
+							timing={0.3}
 						/>
 						<HorizontalFlow
 							text="I am Sahaj"
-							initialDelay={3.5}
-							speed={0.3}
-							timing={0.4}
+							initialDelay={2.5}
+							speed={0.1}
+							timing={0.3}
 						/>
 						<ContinuousAppearance
 							text="&..."
-							initialDelay={7}
-							speed={0.3}
+							initialDelay={4}
+							speed={0.2}
 							timing={1}
 						/>
 						<HorizontalFlow
 							text="today is my birthday"
-							initialDelay={8}
-							speed={0.2}
-							timing={0.5}
+							initialDelay={5.5}
+							speed={0.1}
+							timing={0.4}
 						/>
 						<ContinuousAppearance
 							text="Thankyou !🥳🥳!"
-							initialDelay={13}
-							speed={0.4}
-							timing={0.6}
+							initialDelay={9}
+							speed={0.15}
+							timing={0.4}
 						/>
 						<ContinuousAppearance
 							text="Thankyou !🥳🥳!"
-							initialDelay={13}
-							speed={0.4}
-							timing={0.6}
+							initialDelay={9}
+							speed={0.15}
+							timing={0.4}
 						/>
 						<HorizontalFlow
 							text="Lets proceed with the project now"
-							initialDelay={19}
-							speed={0.2}
-							timing={0.6}
+							initialDelay={12}
+							speed={0.15}
+							timing={0.4}
 						/>
 						<ContinuousAppearance
 							text="Hope you enjoy !!"
-							initialDelay={27}
-							speed={0.3}
-							timing={0.6}
+							initialDelay={16}
+							speed={0.15}
+							timing={0.5}
 						/>
 					</div>
 				);
