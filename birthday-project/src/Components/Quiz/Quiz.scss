@@ -1,4 +1,10 @@
 .Quiz {
 	width: 100vw;
 	display: grid;
+	grid-template-rows: auto 1fr;
+}
+
+.QuizPannel {
+	font-size: 1.5em;
+	padding-left: 20px;
 }
