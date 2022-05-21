@@ -6,23 +6,27 @@ export default class Final extends Component {
 	emojis = [
 		{
 			emoji: "🥳",
-			time: "4.6",
-		},
-		{
-			emoji: "😊",
-			time: "3",
-		},
-		{
-			emoji: "🤔",
-			time: "1.4",
-		},
-		{
-			emoji: "🤖",
 			time: "10",
 		},
 		{
 			emoji: "😁",
-			time: "3",
+			time: "9",
+		},
+		{
+			emoji: "😯",
+			time: "10",
+		},
+		{
+			emoji: "🤔",
+			time: "13",
+		},
+		{
+			emoji: "😊",
+			time: "10",
+		},
+		{
+			emoji: "🤗",
+			time: "25",
 		},
 		{
 			emoji: "😊",
@@ -69,7 +73,7 @@ export default class Final extends Component {
 						this.setState({
 							stage: 1,
 						}),
-					22000
+					19000
 				);
 				return (
 					<div className="Stage0">
@@ -99,7 +103,7 @@ export default class Final extends Component {
 						this.setState({
 							stage: 2,
 						}),
-					25000
+					23000
 				);
 				return (
 					<div className="Stage0">

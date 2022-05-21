@@ -8,10 +8,7 @@ export default class DetailsForm extends Component {
 	secrets = [
 		"love",
 		"friendship",
-		"alone",
-		"anger",
 		"motivation",
-		"lust",
 		"sword",
 		"shield",
 		"bow",
@@ -20,6 +17,16 @@ export default class DetailsForm extends Component {
 		"brain",
 		"brawn",
 		"legacy",
+		"honour",
+		"honest",
+		"strength",
+		"speed",
+		"luck",
+		"agility",
+		"superior",
+		"loyal",
+		"brave",
+		"true",
 	];
 
 	constructor(props) {
@@ -29,7 +36,7 @@ export default class DetailsForm extends Component {
 			email: "",
 			secret: this.secrets[Date.now() % this.secrets.length],
 			disable: false,
-			submited: true,
+			submited: false,
 		};
 	}
 
