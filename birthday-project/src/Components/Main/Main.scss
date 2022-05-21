@@ -18,11 +18,12 @@
 	opacity: 0;
 	animation: makeVisible 2s ease-in-out forwards;
 	font-size: 1.5em;
-	// animation-delay: 36s;
+	// animation-delay: 32s;
 }
 
 .Emoji {
 	font-size: 10em;
+	text-align: center;
 }
 
 .Main {
@@ -41,4 +42,35 @@
 .Stage0 {
 	display: grid;
 	align-items: center;
+}
+
+.Stage1 {
+	display: grid;
+	grid-template-rows: auto 1fr;
+}
+
+.BgColorChanger {
+	animation: bgColorChanger 10s ease-out forwards;
+	animation-delay: 9.2s;
+}
+
+@keyframes bgColorChanger {
+	0% {
+		background: #ff0000;
+	}
+	20% {
+		background: #00ff00;
+	}
+	40% {
+		background: #e97c1c;
+	}
+	60% {
+		background: #0167af;
+	}
+	80% {
+		background: #5c2b8a;
+	}
+	100% {
+		background: #abd4f7;
+	}
 }

@@ -5,6 +5,7 @@ import HorizontalFlow from "../TextEffects/HorizontalFlow/HorizontalFlow";
 import Button from "@mui/material/Button";
 
 import "./Main.scss";
+import Quiz from "../Quiz/Quiz";
 
 export default class Main extends Component {
 	noMessage = [
@@ -17,11 +18,47 @@ export default class Main extends Component {
 	emojis = [
 		{
 			emoji: "🙋‍♂️",
-			time: "10000",
+			time: "4.6",
 		},
 		{
-			emoji: "😠",
-			time: "10000000000",
+			emoji: "😊",
+			time: "3",
+		},
+		{
+			emoji: "🤔",
+			time: "1.4",
+		},
+		{
+			emoji: "🤖",
+			time: "10",
+		},
+		{
+			emoji: "😁",
+			time: "3",
+		},
+		{
+			emoji: "😊",
+			time: "5",
+		},
+		{
+			emoji: "🤫",
+			time: "7",
+		},
+		{
+			emoji: "🤫",
+			time: "6",
+		},
+		{
+			emoji: "😕",
+			time: "5",
+		},
+		{
+			emoji: "😜",
+			time: "5",
+		},
+		{
+			emoji: "😁",
+			time: "100000000",
 		},
 	];
 
@@ -34,6 +71,7 @@ export default class Main extends Component {
 			activeElement: 0,
 			noDisabled: false,
 			emojiIndex: 0,
+			subStage: 0,
 		};
 	}
 
@@ -73,22 +111,92 @@ export default class Main extends Component {
 							timing={0.5}
 						/>
 						<ContinuousAppearance
-							text="Thankyou !🥳🥳! Thankyou !🥳🥳!"
+							text="Thankyou !🥳🥳!"
+							initialDelay={13}
+							speed={0.4}
+							timing={0.6}
+						/>
+						<ContinuousAppearance
+							text="Thankyou !🥳🥳!"
 							initialDelay={13}
 							speed={0.4}
 							timing={0.6}
 						/>
 						<HorizontalFlow
 							text="Lets proceed with the project now"
-							initialDelay={24}
+							initialDelay={19}
 							speed={0.2}
 							timing={0.6}
 						/>
 						<ContinuousAppearance
 							text="Hope you enjoy !!"
-							initialDelay={32}
+							initialDelay={27}
 							speed={0.3}
 							timing={0.6}
+						/>
+					</div>
+				);
+			case 1:
+				if (!this.emojis[this.state.emojiIndex].activated) {
+					setTimeout(() => {
+						this.setState({
+							emojiIndex: this.state.emojiIndex + 1,
+						});
+					}, this.emojis[this.state.emojiIndex].time * 1000);
+					this.emojis[this.state.emojiIndex].activated = true;
+				}
+
+				return (
+					<div className="Stage1 BgColorChanger">
+						<div className="Emoji">
+							{this.emojis[this.state.emojiIndex].emoji}
+						</div>
+						{this.subStageSwitch()}
+					</div>
+				);
+			case 2:
+				return <Quiz />;
+			default:
+				return <></>;
+		}
+	};
+
+	subStageSwitch = () => {
+		const { subStage } = this.state;
+		switch (subStage) {
+			case 0:
+				setTimeout(
+					() =>
+						this.setState({
+							subStage: 1,
+						}),
+					22000
+				);
+				return (
+					<div className="Stage0">
+						<ContinuousAppearance
+							text="Hello Adventurer !!!"
+							initialDelay={0.2}
+							speed={0.2}
+							timing={0.5}
+						/>
+						<HorizontalFlow
+							text="Welcome to ."
+							initialDelay={4}
+							speed={0.3}
+							timing={0.4}
+						/>
+						<ContinuousAppearance
+							text="umm ... "
+							initialDelay={6.6}
+							speed={0.3}
+							timing={1}
+						/>
+						<ContinuousAppearance
+							text="much better"
+							initialDelay={18}
+							speed={0.3}
+							timing={1}
 						/>
 					</div>
 				);
@@ -96,15 +204,42 @@ export default class Main extends Component {
 				setTimeout(
 					() =>
 						this.setState({
-							emojiIndex: this.state.emojiIndex + 1,
+							stage: 2,
 						}),
-					this.emojis[this.state.emojiIndex].time
+					28000
 				);
 				return (
-					<div className="Stage1">
-						<div className="Emoji">
-							{this.emojis[this.state.emojiIndex].emoji}
-						</div>
+					<div className="Stage0">
+						<HorizontalFlow
+							text="Welcome to my project."
+							initialDelay={0.2}
+							speed={0.2}
+							timing={0.5}
+						/>
+						<ContinuousAppearance
+							text="This project is only for "
+							initialDelay={5}
+							speed={0.3}
+							timing={0.4}
+						/>
+						<HorizontalFlow
+							text="Sahaj's close friends."
+							initialDelay={12}
+							speed={0.2}
+							timing={1}
+						/>
+						<HorizontalFlow
+							text="Which means ..."
+							initialDelay={18}
+							speed={0.3}
+							timing={1}
+						/>
+						<HorizontalFlow
+							text="⚡POP QUIZ⚡"
+							initialDelay={23}
+							speed={0.3}
+							timing={1}
+						/>
 					</div>
 				);
 			default:
