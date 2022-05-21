@@ -9,8 +9,13 @@
 
 .HorizontalFlow > .Container > .Content {
 	display: inline-block;
-	min-width: 4px;
+	min-width: 1vw;
 	opacity: 1;
 	transform: translateX(-100vw);
-	// animation: horizontalFlow 0.8s ease forwards;
+	text-align: center;
+}
+
+.HorizontalFlow > .Container {
+	text-align: center;
+	font-size: 4vw;
 }

@@ -49,7 +49,7 @@ export default class Main extends Component {
 				return (
 					<div className="Stage0">
 						<ContinuousAppearance
-							text="Hello World !!!"
+							text="Hello World !!!☺️☺️"
 							initialDelay={0.2}
 							speed={0.2}
 							timing={0.5}
@@ -125,22 +125,22 @@ export default class Main extends Component {
 		switch (noStage) {
 			case 1:
 				return (
-					<div className="NoStage">
+					<div className="NoStage Stage0">
 						<ContinuousAppearance
-							text="Heeyyy !!! "
+							text="Heeyyy !!! 😠"
 							initialDelay={0.1}
 							speed={0.2}
 							timing={0.5}
 						/>
 						<HorizontalFlow
-							text="Thats rude !😠😠😠"
+							text="Thats rude !! "
 							initialDelay={3}
 							speed={0.25}
 							timing={0.4}
 						/>
 						<HorizontalFlow
 							text="Atleast checkout what I have prepared."
-							initialDelay={11.5}
+							initialDelay={8}
 							speed={0.3}
 							timing={0.4}
 						/>
@@ -148,7 +148,7 @@ export default class Main extends Component {
 				);
 			case 2:
 				return (
-					<div className="NoStage2">
+					<div className="NoStage2 Stage0">
 						<HorizontalFlow
 							text="Pleeasseeee !!! "
 							initialDelay={0.1}
@@ -172,7 +172,7 @@ export default class Main extends Component {
 			case 3:
 				setTimeout(() => this.setState({ noDisabled: true }), 28000);
 				return (
-					<div className="NoStage3">
+					<div className="NoStage3 Stage0">
 						<ContinuousAppearance
 							text="You Leave Me No Choice"
 							initialDelay={0.2}
@@ -234,7 +234,7 @@ export default class Main extends Component {
 						</Button>
 						<Button
 							className="Buttons"
-							variant="outlined"
+							variant="contained"
 							color="error"
 							onClick={() => this.NoPressedButtonClick()}
 							disabled={noDisabled}

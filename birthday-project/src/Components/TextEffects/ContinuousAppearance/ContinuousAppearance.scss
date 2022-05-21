@@ -9,4 +9,11 @@
 
 .ContinuousAppearance > .Container > .Content {
 	opacity: 0;
+	text-align: center;
+	min-width: 1vw;
+}
+
+.ContinuousAppearance > .Container {
+	text-align: center;
+	font-size: 4vw;
 }
