@@ -68,7 +68,7 @@ export default class Main extends Component {
 		super(props);
 		this.state = {
 			noPressed: false,
-			stage: 3,
+			stage: 0,
 			noStage: 0,
 			activeElement: 0,
 			noDisabled: false,
