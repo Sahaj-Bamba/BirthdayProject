@@ -22,7 +22,7 @@ export default class HorizontalFlow extends Component {
 								animation:
 									"horizontalFlow " +
 									timing +
-									"s ease forwards",
+									"s ease-out forwards",
 								animationDelay:
 									initialDelay + index * speed + "s",
 							}}

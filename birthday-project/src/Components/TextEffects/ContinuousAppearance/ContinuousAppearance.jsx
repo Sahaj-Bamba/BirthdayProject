@@ -22,7 +22,7 @@ export default class ContinuousAppearance extends Component {
 								animation:
 									"continuousAppearance " +
 									timing +
-									"s ease forwards",
+									"s ease-in forwards",
 								animationDelay:
 									initialDelay + index * speed + "s",
 							}}

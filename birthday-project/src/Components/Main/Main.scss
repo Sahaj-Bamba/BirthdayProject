@@ -1,6 +1,25 @@
 .Main {
-    border: 2px solid gold;
-    width: 100vw;
-    height: 100%;
-    display: block;
+	border: 2px solid gold;
+	width: 100vw;
+	height: 100%;
+	display: block;
+}
+
+@keyframes makeVisible {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.Stage0Buttons > .Buttons {
+	opacity: 0;
+	animation: makeVisible 2s ease-in-out forwards;
+	// animation-delay: 36s;
+}
+
+.Emoji {
+	font-size: 10em;
 }
