@@ -8,5 +8,6 @@ include 'connection.php';
 
 	$result = $con->query("INSERT INTO `details`(`username`, `email`, `secret`) VALUES ('$name','$email','$secret')");
 
+	echo "done";
 ?>
 

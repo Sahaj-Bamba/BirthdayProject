@@ -28,7 +28,8 @@ export default class DetailsForm extends Component {
 			name: "",
 			email: "",
 			secret: this.secrets[Date.now() % this.secrets.length],
-			submited: false,
+			disable: false,
+			submited: true,
 		};
 	}
 
@@ -51,23 +52,29 @@ export default class DetailsForm extends Component {
 		bodyFormData.append("secret", secret);
 		axios({
 			method: "post",
-			url: "/submit.php",
+			url: "https://backend.sahaj-bamba.tech/submit.php",
 			data: bodyFormData,
 			headers: { "Content-Type": "multipart/form-data" },
 		})
-			.then(function (response) {
+			.then((response) => {
 				console.log(response);
 				this.setState({
 					submited: true,
 				});
 			})
-			.catch(function (response) {
+			.catch((response) => {
 				console.log(response);
+				this.setState({
+					submited: true,
+					name: "",
+					email: "",
+					disable: true,
+				});
 			});
 	};
 
 	render() {
-		const { name, email, submited, secret } = this.state;
+		const { name, email, submited, disable, secret } = this.state;
 
 		return (
 			<div className="DetailsFormContainer">
@@ -103,13 +110,17 @@ export default class DetailsForm extends Component {
 						variant="contained"
 						color="success"
 						onClick={() => this.submitting()}
+						disabled={disable}
 					>
 						Submit
 					</Button>
+					<br />
+					<br />
 					{submited && (
 						<div>
-							Your secret is {secret}. If you have come this far
-							ping me your secret.
+							Your secret word is {secret}.
+							<br />
+							If you have come this far ping me your secret word.
 						</div>
 					)}
 				</div>
