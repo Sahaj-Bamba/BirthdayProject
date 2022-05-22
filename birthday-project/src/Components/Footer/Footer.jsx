@@ -6,7 +6,7 @@ export default class Footer extends Component {
 		return (
 			<div className="footer navbar bg-light bg-dark">
 				<div className="content text-muted">
-					Copyright © 2020 Design by Sahaj Bamba
+					Copyright © 2022 Design by Sahaj Bamba
 				</div>
 			</div>
 		);
